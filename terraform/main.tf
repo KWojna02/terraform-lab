@@ -1,3 +1,13 @@
+terraform {
+  backend "s3" {
+    bucket = "sensor-monitoring-tfstate-251be28f"
+    key = "terraform.tfstate"
+    region = "us-east-1"
+    dynamodb_table = "sensor-monitoring-terraform-locks"
+    encrypt = true
+  }
+}
+
 provider "aws" {
     region = "us-east-1"
 }
