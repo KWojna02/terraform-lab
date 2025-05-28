@@ -1,5 +1,5 @@
 output "topic_name" {
-    value = aws_sns_topic.sensor_alerts.name
+  value = aws_sns_topic.sensor_alerts.name
 }
 
 output "topic_arn" {

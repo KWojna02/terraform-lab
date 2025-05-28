@@ -1,19 +1,19 @@
 variable "function_name" {
-    type = string
+  type = string
 }
 
-variable "lambda_role_arn"{
-    type = string
+variable "lambda_role_arn" {
+  type = string
 }
 
 variable "file_path" {
-    type = string
+  type = string
 }
 
 variable "dynamodb_table_name" {
-    type = string
+  type = string
 }
 
 variable "sns_topic_arn" {
-    type = string
+  type = string
 }

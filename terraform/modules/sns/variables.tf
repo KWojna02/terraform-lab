@@ -1,7 +1,7 @@
 variable "topic_name" {
-    type = string
+  type = string
 }
 
 variable "notification_email_parameter" {
-    type = string
+  type = string
 }
