@@ -18,6 +18,13 @@ data "aws_iam_role" "main_role"{
     name = "LabRole"
 }
 
+module "secrets" {
+  source = "./modules/secrets"
+  
+  project_name       = var.project_name
+  notification_email = var.notification_email
+}
+
 module "dynamodb" {
     source = "./modules/dynamodb"
 
@@ -28,7 +35,9 @@ module "sns" {
     source = "./modules/sns"
 
     topic_name = "${var.project_name}-alerts"
-    notification_email = var.notification_email
+    notification_email_parameter = module.secrets.notification_email_parameter_name
+
+    depends_on = [ module.secrets ]
 }
 
 module "lambda"{
